@@ -262,25 +262,26 @@
       overflow: hidden;
     }
     
-    .projects-carousel {
-      display: flex;
-      animation: scroll 30s linear infinite;
-      gap: 2rem;
-      padding: 1rem 0;
-    }
     
-    .projects-carousel:hover {
-      animation-play-state: paused;
+  .projects-carousel {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 30s linear infinite;
+    padding: 1rem 0;
+  }
+
+  .projects-carousel:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
     }
-    
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(calc(-350px * 6));
-      }
+    to {
+      transform: translateX(-50%);
     }
+  }
     
     .project-card {
       background: var(--card-bg);

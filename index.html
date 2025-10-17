@@ -2,94 +2,960 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jc Fernandez - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jc Fernandez - Futuristic Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Particle Background -->
+  <div class="particles" id="particles"></div>
 
   <!-- Navigation -->
-  <nav>
-    <a href="#" class="logo">Jc Fernandez</a>
-    <div class="menu-toggle">&#9776;</div> <!-- Hamburger Menu -->
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Jc Fernandez</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+              <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
-  
+
   <!-- Home Section -->
-  <section id="home">
-    <h1 class="animated-text">Welcome to My Portfolio</h1>
-    <a href="#about">Get to know me</a>
+  <section id="home" class="d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <h1 class="animate__animated animate__fadeInDown">Welcome to My Portfolio</h1>
+          <p class="animate__animated animate__fadeInUp">Student & Aspiring Developer</p>
+          <a href="#about" class="btn btn-primary btn-lg animate__animated animate__fadeInUp">Get to Know Me</a>
+        </div>
+        <div class="col-md-6 text-center mt-4 mt-md-0">
+          <div class="floating">
+            <div class="profile-image-container">
+              <img src="unnamed.jpg" alt="Jc Fernandez" class="profile-image img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- About Section -->
   <section id="about">
-    <h2>About Me</h2>
-    <div class="line"></div>
-    <p>Hello, I'm Jc Fernandez, a student at Siargao Island Institute of Technology, exploring the world of programming...</p>
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <p id="about-text" class="fs-5">Hello, I'm Jc Fernandez, a student at Siargao Island Institute of Technology, exploring the world of programming and web development. I'm passionate about creating innovative solutions and continuously learning new technologies.</p>
+        </div>
+        <div class="col-lg-6">
+          <div class="card p-4 dashboard-card">
+            <h4>Personal Details</h4>
+            <ul class="list-unstyled">
+              <li><strong>Location:</strong> Siargao Island, Philippines</li>
+              <li><strong>Education:</strong> Siargao Island Institute of Technology</li>
+              <li><strong>Interests:</strong> Web Development, AI, Photography</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
-<!-- Projects Section -->
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="line"></div>
-  <div class="project-container">
-    <div class="project">
-      <img src="1.png" alt="AI-powered Fish Recognition System">
-      <h3>AquaSnap</h3>
-      <p>AI-powered Fish Recognition System</p>
-      <a href="#">View Project</a>
-    </div>
-    <div class="project">
-      <img src="2.png" alt="Attendance System with Face Recognition">
-      <h3>SiargaoSafePass</h3>
-      <p>Tourism Monitoring and Tracking System with Face Recognition and QR Code</p>
-      <a href="#">View Project</a>
-    </div>
-  </div>
-</section>
 
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-carousel" id="projects-carousel">
+        <!-- Projects will be dynamically loaded here -->
+      </div>
+    </div>
+  </section>
 
   <!-- Skills Section -->
   <section id="skills">
-    <h2>Skills</h2>
-    <div class="line"></div>
-    <div class="skill-container">
-      <div class="skill"><p>HTML</p><div class="progress-bar"><div class="progress html">90%</div></div></div>
-      <div class="skill"><p>CSS</p><div class="progress-bar"><div class="progress css">85%</div></div></div>
-      <div class="skill"><p>JavaScript</p><div class="progress-bar"><div class="progress js">45%</div></div></div>
-      <div class="skill"><p>PHP</p><div class="progress-bar"><div class="progress php">45%</div></div></div>
-      <div class="skill"><p>MySQL</p><div class="progress-bar"><div class="progress mysql">65%</div></div></div>
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid" id="skills-container">
+        <!-- Skills will be dynamically loaded here -->
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <h2>Contact</h2>
-    <form>
-      <label for="phone">Phone:</label>
-      <input type="text" id="phone" value="09815361779" readonly>
-      
-      <label for="email">Email:</label>
-      <input type="text" id="email" value="fernandezjc200@gmail.com" readonly>
-      
-      <label for="facebook">Facebook:</label>
-      <input type="text" id="facebook" value="https://facebook.com/jcfernandez" readonly>
-      
-      <label for="linkedin">LinkedIn:</label>
-      <input type="text" id="linkedin" value="https://linkedin.com/in/jcfernandez" readonly>
-    </form>
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="contact-info">
+            <p><i class="fas fa-phone"></i> <span id="contact-phone">09815361779</span></p>
+            <p><i class="fas fa-envelope"></i> <span id="contact-email">fernandezjc200@gmail.com</span></p>
+            <p><i class="fab fa-facebook"></i> <span id="contact-facebook">https://facebook.com/jcfernandez</span></p>
+            <p><i class="fab fa-linkedin"></i> <span id="contact-linkedin">https://linkedin.com/in/jcfernandez</span></p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <form id="contact-form" class="dashboard-card p-4">
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div> 
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Jc Fernandez. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Admin Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="login-form">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Details Modal -->
+  <div class="modal fade project-modal" id="projectDetailsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModalTitle">Project Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img id="projectModalImage" class="project-modal-img" alt="Project Image">
+          <div class="project-details">
+            <h4 id="projectModalName"></h4>
+            <p id="projectModalDescription"></p>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Bootstrap</span>
+            <span class="tech-tag">PHP</span>
+          </div>
+          <div class="project-links">
+            <a href="#" id="projectModalLink" class="btn btn-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard (Hidden by default) -->
+  <div id="dashboard" class="d-none">
+    <div class="dashboard-container">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-2 sidebar">
+          <div class="sidebar-header">
+            <h4>Dashboard</h4>
+          </div>
+          <ul class="sidebar-menu">
+            <li><a href="#" class="active" data-section="overview">Overview</a></li>
+            <li><a href="#" data-section="about">About Me</a></li>
+            <li><a href="#" data-section="projects">Projects</a></li>
+            <li><a href="#" data-section="skills">Skills</a></li>
+            <li><a href="#" data-section="contact">Contact</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+          </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="col-lg-10">
+          <div class="dashboard-content">
+            <!-- Overview Section -->
+            <div id="overview-section" class="dashboard-section">
+              <h2 class="mb-4">Dashboard Overview</h2>
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="dashboard-card text-center">
+                    <h3 id="projects-count">0</h3>
+                    <p>Projects</p>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="dashboard-card text-center">
+                    <h3 id="skills-count">0</h3>
+                    <p>Skills</p>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="dashboard-card text-center">
+                    <h3>4</h3>
+                    <p>Contact Info</p>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="dashboard-card text-center">
+                    <h3>1</h3>
+                    <p>About Section</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- About Section -->
+            <div id="about-section" class="dashboard-section d-none">
+              <h2 class="mb-4">Edit About Me</h2>
+              <div class="dashboard-card">
+                <form id="about-form">
+                  <div class="mb-3">
+                    <label for="about-content" class="form-label">About Content</label>
+                    <textarea class="form-control" id="about-content" rows="6"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+              </div>
+            </div>
+            
+            <!-- Projects Section -->
+            <div id="projects-section" class="dashboard-section d-none">
+              <h2 class="mb-4">Manage Projects</h2>
+              <div class="dashboard-card mb-4">
+                <h4>Add New Project</h4>
+                <form id="project-form">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="project-name" class="form-label">Project Name</label>
+                      <input type="text" class="form-control" id="project-name" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="project-description" class="form-label">Description</label>
+                    <textarea class="form-control" id="project-description" rows="3" required></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="project-link" class="form-label">Project Link</label>
+                    <input type="text" class="form-control" id="project-link">
+                  </div>
+                  
+                  <!-- Image Upload Section -->
+                  <div class="mb-3">
+                    <label class="form-label">Project Image</label>
+                    <div class="image-upload-container" id="image-upload-area">
+                      <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                      </div>
+                      <p>Drag & drop an image here or click to browse</p>
+                      <input type="file" id="project-image" accept="image/*" class="d-none">
+                      <button type="button" class="btn btn-outline-secondary mt-2" id="browse-btn">Browse Files</button>
+                      <img id="image-preview" class="image-preview" alt="Image preview">
+                    </div>
+                    <div class="form-text">Recommended size: 800x400px. Max file size: 2MB</div>
+                  </div>
+                  
+                  <button type="submit" class="btn btn-primary">Add Project</button>
+                </form>
+              </div>
+              
+              <div class="dashboard-card">
+                <h4>Existing Projects</h4>
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody id="projects-table">
+                      <!-- Projects will be listed here -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Skills Section -->
+            <div id="skills-section" class="dashboard-section d-none">
+              <h2 class="mb-4">Manage Skills</h2>
+              <div class="dashboard-card mb-4">
+                <h4>Add New Skill</h4>
+                <form id="skill-form">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="skill-name" class="form-label">Skill Name</label>
+                      <input type="text" class="form-control" id="skill-name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="skill-level" class="form-label">Skill Level (%)</label>
+                      <input type="number" class="form-control" id="skill-level" min="0" max="100" required>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Add Skill</button>
+                </form>
+              </div>
+              
+              <div class="dashboard-card">
+                <h4>Existing Skills</h4>
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Skill</th>
+                        <th>Level</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody id="skills-table">
+                      <!-- Skills will be listed here -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contact Section -->
+            <div id="contact-section" class="dashboard-section d-none">
+              <h2 class="mb-4">Manage Contact Information</h2>
+              <div class="dashboard-card">
+                <form id="contact-info-form">
+                  <div class="mb-3">
+                    <label for="dashboard-phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="dashboard-phone">
+                  </div>
+                  <div class="mb-3">
+                    <label for="dashboard-email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="dashboard-email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="dashboard-facebook" class="form-label">Facebook</label>
+                    <input type="text" class="form-control" id="dashboard-facebook">
+                  </div>
+                  <div class="mb-3">
+                    <label for="dashboard-linkedin" class="form-label">LinkedIn</label>
+                    <input type="text" class="form-control" id="dashboard-linkedin">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Create particle background
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random properties
+        const size = Math.random() * 5 + 1;
+        const posX = Math.random() * 100;
+        const delay = Math.random() * 15;
+        const duration = Math.random() * 10 + 10;
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${posX}%`;
+        particle.style.animationDelay = `${delay}s`;
+        particle.style.animationDuration = `${duration}s`;
+        
+        particle.style.background = '#00f7ff';
+        
+        particlesContainer.appendChild(particle);
+      }
+    }
+    
+    // Simple encryption/decryption functions
+    function simpleEncrypt(text) {
+      return btoa(text);
+    }
+    
+    function simpleDecrypt(text) {
+      return atob(text);
+    }
+    
+    // Check if user is logged in
+    function isLoggedIn() {
+      return localStorage.getItem('loggedIn') === 'true';
+    }
+    
+    // Login function
+    function login(username, password) {
+      // In a real application, this would be a server-side check
+      // For demo purposes, we'll use a hardcoded username and password
+      const encryptedUsername = simpleEncrypt('admin');
+      const encryptedPassword = simpleEncrypt('password123');
+      
+      if (username === simpleDecrypt(encryptedUsername) && password === simpleDecrypt(encryptedPassword)) {
+        localStorage.setItem('loggedIn', 'true');
+        return true;
+      }
+      return false;
+    }
+    
+    // Logout function
+    function logout() {
+      localStorage.removeItem('loggedIn');
+      window.location.reload();
+    }
+    
+    // Convert image to base64 for storage
+    function imageToBase64(file, callback) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        callback(e.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+    
+    // Load data from localStorage
+    function loadData() {
+      // Load about content
+      const aboutContent = localStorage.getItem('aboutContent');
+      if (aboutContent) {
+        document.getElementById('about-text').textContent = aboutContent;
+        document.getElementById('about-content').value = aboutContent;
+      }
+      
+      // Load projects
+      const projects = JSON.parse(localStorage.getItem('projects') || '[]');
+      renderProjects(projects);
+      renderProjectsTable(projects);
+      
+      // Load skills
+      const skills = JSON.parse(localStorage.getItem('skills') || '[]');
+      renderSkills(skills);
+      renderSkillsTable(skills);
+      
+      // Load contact info
+      const contactInfo = JSON.parse(localStorage.getItem('contactInfo') || '{}');
+      if (contactInfo.phone) {
+        document.getElementById('contact-phone').textContent = contactInfo.phone;
+        document.getElementById('dashboard-phone').value = contactInfo.phone;
+      }
+      if (contactInfo.email) {
+        document.getElementById('contact-email').textContent = contactInfo.email;
+        document.getElementById('dashboard-email').value = contactInfo.email;
+      }
+      if (contactInfo.facebook) {
+        document.getElementById('contact-facebook').textContent = contactInfo.facebook;
+        document.getElementById('dashboard-facebook').value = contactInfo.facebook;
+      }
+      if (contactInfo.linkedin) {
+        document.getElementById('contact-linkedin').textContent = contactInfo.linkedin;
+        document.getElementById('dashboard-linkedin').value = contactInfo.linkedin;
+      }
+      
+      // Update counts
+      document.getElementById('projects-count').textContent = projects.length;
+      document.getElementById('skills-count').textContent = skills.length;
+    }
+    
+    // Render projects on the main page
+    function renderProjects(projects) {
+      const container = document.getElementById('projects-carousel');
+      container.innerHTML = '';
+      
+      // Use only the actual projects without duplication
+      const projectList = projects.length === 0 ? getDefaultProjects() : projects;
+      
+      projectList.forEach((project, index) => {
+        container.innerHTML += `
+          <div class="project-card" data-index="${index}">
+            <img src="${project.image}" class="project-img" alt="${project.name}">
+            <div class="card-body">
+              <h5 class="card-title">${project.name}</h5>
+              <p class="card-text">${project.description}</p>
+              <button class="btn btn-primary view-project-btn" data-index="${index}">View Details</button>
+            </div>
+          </div>
+        `;
+      });
+      
+      // Add click event listeners to project cards
+      document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+          if (!e.target.classList.contains('view-project-btn')) {
+            const index = this.getAttribute('data-index');
+            showProjectDetails(projectList[index]);
+          }
+        });
+      });
+      
+      // Add click event listeners to view details buttons
+      document.querySelectorAll('.view-project-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const index = this.getAttribute('data-index');
+          showProjectDetails(projectList[index]);
+        });
+      });
+    }
+    
+    // Show project details in modal
+    function showProjectDetails(project) {
+      document.getElementById('projectModalTitle').textContent = project.name;
+      document.getElementById('projectModalName').textContent = project.name;
+      document.getElementById('projectModalDescription').textContent = project.description;
+      document.getElementById('projectModalImage').src = project.image;
+      document.getElementById('projectModalLink').href = project.link;
+      
+      const projectModal = new bootstrap.Modal(document.getElementById('projectDetailsModal'));
+      projectModal.show();
+    }
+    
+    // Get default projects
+    function getDefaultProjects() {
+      return [
+        {
+          name: 'AquaSnap',
+          description: 'AI-powered Fish Recognition System that uses machine learning to identify various fish species in real-time. The system can process images from underwater cameras and provide accurate species classification with detailed information about each fish.',
+          image: '1.png',
+          link: '#'
+        },
+        {
+          name: 'SiargaoSafePass',
+          description: 'Tourism Monitoring and Tracking System with Face Recognition and QR Code technology. This system helps manage tourist flow in Siargao Island while ensuring safety and security through advanced biometric identification.',
+          image: '2.png',
+          link: '#'
+        }
+      ];
+    }
+    
+    // Render projects table in dashboard
+    function renderProjectsTable(projects) {
+      const table = document.getElementById('projects-table');
+      table.innerHTML = '';
+      
+      projects.forEach((project, index) => {
+        // Create a thumbnail for the image
+        const imageThumb = project.image ? 
+          `<img src="${project.image}" class="img-thumbnail" style="max-height: 50px;" alt="${project.name}">` : 
+          '<span class="text-muted">No image</span>';
+          
+        table.innerHTML += `
+          <tr>
+            <td>${project.name}</td>
+            <td>${project.description.substring(0, 50)}${project.description.length > 50 ? '...' : ''}</td>
+            <td>${imageThumb}</td>
+            <td>
+              <button class="btn btn-sm btn-warning action-btn edit-project" data-index="${index}">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn btn-sm btn-danger action-btn delete-project" data-index="${index}">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        `;
+      });
+    }
+    
+    // Render skills on the main page
+    function renderSkills(skills) {
+      const container = document.getElementById('skills-container');
+      container.innerHTML = '';
+      
+      const skillList = skills.length === 0 ? getDefaultSkills() : skills;
+      
+      skillList.forEach(skill => {
+        const iconClass = getSkillIcon(skill.name);
+        
+        container.innerHTML += `
+          <div class="skill-item">
+            <div class="skill-icon">
+              <i class="${iconClass}"></i>
+            </div>
+            <h5>${skill.name}</h5>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: ${skill.level}%"></div>
+            </div>
+            <div class="skill-percentage">${skill.level}%</div>
+          </div>
+        `;
+      });
+      
+      // Animate progress bars
+      setTimeout(() => {
+        document.querySelectorAll('.skill-progress-bar').forEach(bar => {
+          bar.style.transition = 'width 2s ease-in-out';
+        });
+      }, 500);
+    }
+    
+    // Get default skills
+    function getDefaultSkills() {
+      return [
+        { name: 'HTML', level: 90 },
+        { name: 'CSS', level: 85 },
+        { name: 'JavaScript', level: 75 },
+        { name: 'React', level: 70 },
+        { name: 'PHP', level: 65 },
+        { name: 'MySQL', level: 70 },
+        { name: 'Python', level: 60 },
+        { name: 'UI/UX Design', level: 75 }
+      ];
+    }
+    
+    // Get icon for skill
+    function getSkillIcon(skillName) {
+      const icons = {
+        'HTML': 'fab fa-html5',
+        'CSS': 'fab fa-css3-alt',
+        'JavaScript': 'fab fa-js-square',
+        'React': 'fab fa-react',
+        'PHP': 'fab fa-php',
+        'MySQL': 'fas fa-database',
+        'Python': 'fab fa-python',
+        'UI/UX Design': 'fas fa-palette'
+      };
+      
+      return icons[skillName] || 'fas fa-code';
+    }
+    
+    // Render skills table in dashboard
+    function renderSkillsTable(skills) {
+      const table = document.getElementById('skills-table');
+      table.innerHTML = '';
+      
+      skills.forEach((skill, index) => {
+        table.innerHTML += `
+          <tr>
+            <td>${skill.name}</td>
+            <td>${skill.level}%</td>
+            <td>
+              <button class="btn btn-sm btn-warning action-btn edit-skill" data-index="${index}">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn btn-sm btn-danger action-btn delete-skill" data-index="${index}">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        `;
+      });
+    }
+    
+    // Event Listeners
+    document.addEventListener('DOMContentLoaded', function() {
+      // Create particle background
+      createParticles();
+      
+      // Check if user is logged in
+      if (isLoggedIn()) {
+        document.getElementById('dashboard').classList.remove('d-none');
+        document.querySelector('body > nav').classList.add('d-none');
+        document.querySelectorAll('section, footer').forEach(el => el.classList.add('d-none'));
+      }
+      
+      // Load data
+      loadData();
+      
+      // Login form
+      document.getElementById('login-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        if (login(username, password)) {
+          document.getElementById('loginModal').querySelector('.btn-close').click();
+          document.getElementById('dashboard').classList.remove('d-none');
+          document.querySelector('body > nav').classList.add('d-none');
+          document.querySelectorAll('section, footer').forEach(el => el.classList.add('d-none'));
+        } else {
+          alert('Invalid username or password');
+        }
+      });
+      
+      // Logout button
+      document.getElementById('logout-btn').addEventListener('click', function() {
+        logout();
+      });
+      
+      // Dashboard navigation
+      document.querySelectorAll('.sidebar-menu a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Update active link
+          document.querySelectorAll('.sidebar-menu a').forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Show corresponding section
+          const section = this.getAttribute('data-section');
+          document.querySelectorAll('.dashboard-section').forEach(s => s.classList.add('d-none'));
+          document.getElementById(`${section}-section`).classList.remove('d-none');
+        });
+      });
+      
+      // About form
+      document.getElementById('about-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const content = document.getElementById('about-content').value;
+        localStorage.setItem('aboutContent', content);
+        document.getElementById('about-text').textContent = content;
+        alert('About section updated successfully!');
+      });
+      
+      // Image upload functionality
+      const imageUploadArea = document.getElementById('image-upload-area');
+      const fileInput = document.getElementById('project-image');
+      const browseBtn = document.getElementById('browse-btn');
+      const imagePreview = document.getElementById('image-preview');
+      
+      // Click on browse button
+      browseBtn.addEventListener('click', function() {
+        fileInput.click();
+      });
+      
+      // Click on upload area
+      imageUploadArea.addEventListener('click', function(e) {
+        if (e.target !== browseBtn) {
+          fileInput.click();
+        }
+      });
+      
+      // File input change
+      fileInput.addEventListener('change', function() {
+        if (this.files && this.files[0]) {
+          const file = this.files[0];
+          
+          // Check file size (max 2MB)
+          if (file.size > 2 * 1024 * 1024) {
+            alert('File size too large! Please select an image under 2MB.');
+            return;
+          }
+          
+          // Check file type
+          if (!file.type.match('image.*')) {
+            alert('Please select a valid image file (JPEG, PNG, etc.)');
+            return;
+          }
+          
+          const reader = new FileReader();
+          
+          reader.onload = function(e) {
+            imagePreview.src = e.target.result;
+            imagePreview.style.display = 'block';
+          };
+          
+          reader.readAsDataURL(file);
+        }
+      });
+      
+      // Drag and drop functionality
+      imageUploadArea.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        this.classList.add('dragover');
+      });
+      
+      imageUploadArea.addEventListener('dragleave', function() {
+        this.classList.remove('dragover');
+      });
+      
+      imageUploadArea.addEventListener('drop', function(e) {
+        e.preventDefault();
+        this.classList.remove('dragover');
+        
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          const file = e.dataTransfer.files[0];
+          
+          // Check file size (max 2MB)
+          if (file.size > 2 * 1024 * 1024) {
+            alert('File size too large! Please select an image under 2MB.');
+            return;
+          }
+          
+          // Check file type
+          if (!file.type.match('image.*')) {
+            alert('Please select a valid image file (JPEG, PNG, etc.)');
+            return;
+          }
+          
+          fileInput.files = e.dataTransfer.files;
+          
+          const reader = new FileReader();
+          
+          reader.onload = function(e) {
+            imagePreview.src = e.target.result;
+            imagePreview.style.display = 'block';
+          };
+          
+          reader.readAsDataURL(file);
+        }
+      });
+      
+      // Project form
+      document.getElementById('project-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('project-name').value;
+        const description = document.getElementById('project-description').value;
+        const link = document.getElementById('project-link').value;
+        
+        // Get the image data
+        const fileInput = document.getElementById('project-image');
+        let imageData = '';
+        
+        if (fileInput.files && fileInput.files[0]) {
+          const file = fileInput.files[0];
+          imageToBase64(file, function(base64) {
+            imageData = base64;
+            
+            const projects = JSON.parse(localStorage.getItem('projects') || '[]');
+            projects.push({ name, description, link, image: imageData });
+            localStorage.setItem('projects', JSON.stringify(projects));
+            
+            renderProjects(projects);
+            renderProjectsTable(projects);
+            document.getElementById('projects-count').textContent = projects.length;
+            
+            // Reset form and preview
+            document.getElementById('project-form').reset();
+            imagePreview.style.display = 'none';
+            alert('Project added successfully!');
+          });
+        } else {
+          alert('Please select an image for the project');
+        }
+      });
+      
+      // Skill form
+      document.getElementById('skill-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('skill-name').value;
+        const level = parseInt(document.getElementById('skill-level').value);
+        
+        const skills = JSON.parse(localStorage.getItem('skills') || '[]');
+        skills.push({ name, level });
+        localStorage.setItem('skills', JSON.stringify(skills));
+        
+        renderSkills(skills);
+        renderSkillsTable(skills);
+        document.getElementById('skills-count').textContent = skills.length;
+        
+        this.reset();
+        alert('Skill added successfully!');
+      });
+      
+      // Contact info form
+      document.getElementById('contact-info-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const phone = document.getElementById('dashboard-phone').value;
+        const email = document.getElementById('dashboard-email').value;
+        const facebook = document.getElementById('dashboard-facebook').value;
+        const linkedin = document.getElementById('dashboard-linkedin').value;
+        
+        const contactInfo = { phone, email, facebook, linkedin };
+        localStorage.setItem('contactInfo', JSON.stringify(contactInfo));
+        
+        document.getElementById('contact-phone').textContent = phone;
+        document.getElementById('contact-email').textContent = email;
+        document.getElementById('contact-facebook').textContent = facebook;
+        document.getElementById('contact-linkedin').textContent = linkedin;
+        
+        alert('Contact information updated successfully!');
+      });
+      
+      // Contact form
+      document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your message! I will get back to you soon.');
+        this.reset();
+      });
+      
+      // Delete project
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('.delete-project')) {
+          const index = e.target.closest('.delete-project').getAttribute('data-index');
+          const projects = JSON.parse(localStorage.getItem('projects') || '[]');
+          projects.splice(index, 1);
+          localStorage.setItem('projects', JSON.stringify(projects));
+          
+          renderProjects(projects);
+          renderProjectsTable(projects);
+          document.getElementById('projects-count').textContent = projects.length;
+        }
+        
+        // Delete skill
+        if (e.target.closest('.delete-skill')) {
+          const index = e.target.closest('.delete-skill').getAttribute('data-index');
+          const skills = JSON.parse(localStorage.getItem('skills') || '[]');
+          skills.splice(index, 1);
+          localStorage.setItem('skills', JSON.stringify(skills));
+          
+          renderSkills(skills);
+          renderSkillsTable(skills);
+          document.getElementById('skills-count').textContent = skills.length;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
-<script>
-  document.querySelector(".menu-toggle").addEventListener("click", function () {
-  document.querySelector(".nav-links").classList.toggle("active");
-});
-
-</script> 
